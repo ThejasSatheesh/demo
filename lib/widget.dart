@@ -26,7 +26,7 @@ class PhotoAndLocation extends StatelessWidget {
           Container(
             decoration: BoxDecoration(boxShadow: [
               BoxShadow(
-                  blurRadius: 5, offset: Offset(5, 5), color: Colors.blueGrey),
+                  blurRadius: 5, offset: Offset(5, 5), color: Colors.grey.shade800),
             ], borderRadius: BorderRadius.all(Radius.circular(25))),
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(25)),

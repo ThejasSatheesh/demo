@@ -13,10 +13,10 @@ List<Color> colorList1 = [
   ];
 
   List<Color> colorList0 = [
-    Colors.blue.shade800,
-    Colors.blue.shade600,
-    Colors.blue.shade400,
-    Colors.blue.shade200,
+    Colors.grey.shade800,
+    Colors.grey.shade700,
+    Colors.grey.shade600,
+    Colors.grey.shade500,
     Colors.white,
     Colors.white,
     Colors.white,
