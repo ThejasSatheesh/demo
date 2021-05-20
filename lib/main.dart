@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
                       child: Image.asset("assets/spotixLogo.png")),
                 ),
                 Positioned.fill(
-                  bottom: 10,
+                  bottom: -175,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -48,19 +48,10 @@ class Home extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Positioned(
-                    bottom: 90,
-                    left: 30,
-                    child: Center(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 10),
+                      SizedBox(height: 30),
                           Text("Thejas Satheesh",
                               style: TextStyle(
-                                  fontSize: 50,
+                                  fontSize: 40,
                                   color: Color(0xFF545455),
                                   fontWeight: FontWeight.bold)),
                           SizedBox(height: 15),
@@ -73,9 +64,10 @@ Thrissur-027
                             style: TextStyle(
                                 fontSize: 25, color: Color(0xFF545455)),
                           )
-                        ],
-                      ),
-                    ))
+                    ],
+                  ),
+                ),
+                
               ],
             ),
           ),
