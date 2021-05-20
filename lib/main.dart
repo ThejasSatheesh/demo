@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import '';
 
 void main() {
   runApp(Home());
@@ -17,7 +16,7 @@ class Home extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
-                    colors: [Color(0xFFADD8E6), Colors.white])),
+                    colors: [Colors.blue.shade500,Colors.blue.shade400,Colors.blue.shade400,Colors.blue.shade400,Colors.white,Colors.white,Colors.white, Colors.white,Colors.white])),
             child: Stack(
               fit: StackFit.expand,
               children: [
@@ -49,25 +48,25 @@ class Home extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 30),
-                          Text("Thejas Satheesh",
-                              style: TextStyle(
-                                  fontSize: 40,
-                                  color: Color(0xFF545455),
-                                  fontWeight: FontWeight.bold)),
-                          SizedBox(height: 15),
-                          Text(
-                            """
+                      Text("Thejas Satheesh",
+                          style: TextStyle(
+                              fontSize: 40,
+                              color: Color(0xFF545455),
+                              fontWeight: FontWeight.bold, fontFamily: "farro")),
+                      SizedBox(height: 15),
+                      Text(
+                        """
 Thayyil house,
 Kanimangalam P.O.
 Thrissur-027
                         """,
-                            style: TextStyle(
-                                fontSize: 25, color: Color(0xFF545455)),
-                          )
+                        style:
+                            TextStyle(fontSize: 25, color: Color(0xFF545455), fontFamily: "farro-light"),
+                      ),
+                      
                     ],
                   ),
                 ),
-                
               ],
             ),
           ),
