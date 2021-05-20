@@ -1,73 +1,66 @@
 import 'package:flutter/material.dart';
+import 'widget.dart';
 
 void main() {
   runApp(Home());
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<Color> colorList1 = [
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white
+  ];
+
+  List<Color> colorList0 = [
+    Colors.blue.shade800,
+    Colors.blue.shade600,
+    Colors.blue.shade400,
+    Colors.blue.shade200,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white
+  ];
+  var animationStarted = false;
+  void initState() {
+    print("awd");
+    WidgetsBinding.instance!.addPostFrameCallback((_) => setState(() {
+          animationStarted = !animationStarted;
+        }));
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
-          child: Container(
+          child: AnimatedContainer(
+            curve: Curves.easeInCubic,
+            duration: Duration(seconds: 5),
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [Colors.blue.shade500,Colors.blue.shade400,Colors.blue.shade400,Colors.blue.shade400,Colors.white,Colors.white,Colors.white, Colors.white,Colors.white])),
+                    end: Alignment.topLeft,
+                    colors: animationStarted ? colorList0 : colorList1)),
             child: Stack(
               fit: StackFit.expand,
-              children: [
-                Positioned(
-                  top: 0,
-                  width: 325,
-                  child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                      child: Image.asset("assets/spotixLogo.png")),
-                ),
-                Positioned.fill(
-                  bottom: -175,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(boxShadow: [
-                          BoxShadow(
-                              blurRadius: 5,
-                              offset: Offset(5, 5),
-                              color: Colors.blueGrey),
-                        ], borderRadius: BorderRadius.all(Radius.circular(25))),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(25)),
-                          child: Image.asset(
-                            "assets/myphoto.jpeg",
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 30),
-                      Text("Thejas Satheesh",
-                          style: TextStyle(
-                              fontSize: 40,
-                              color: Color(0xFF545455),
-                              fontWeight: FontWeight.bold, fontFamily: "farro")),
-                      SizedBox(height: 15),
-                      Text(
-                        """
-Thayyil house,
-Kanimangalam P.O.
-Thrissur-027
-                        """,
-                        style:
-                            TextStyle(fontSize: 25, color: Color(0xFF545455), fontFamily: "farro-light"),
-                      ),
-                      
-                    ],
-                  ),
-                ),
-              ],
+              children: [SpotixLogo(), PhotoAndLocation()],
             ),
           ),
         ),
